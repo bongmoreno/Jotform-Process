@@ -208,8 +208,16 @@ var LESSONS = [
         differentiation: "The top 15 rule applies only to <strong>booking staff</strong>. It's waived once a case reaches Jotform."
       },
       {
+        name: "Check IBA's Window First",
+        definition: "Before logging, check IBA's booking window. The window is up to 1 month from the day the tenant contacts you, or up to the last date IBA shows a schedule for, whichever comes first. If the tenant is unavailable beyond the window (for example, going on holiday), or asks for a specific date outside it (for example, 3 November), do not log the case in Jotform. Follow the hold process, the blacklist process, or raise an Access Issue.",
+        example: "IBA only shows schedules up to 3 weeks out. A tenant says they're on holiday for the next 6 weeks. You don't log it in Jotform. You follow the matching process instead. Another tenant asks for 3 November, which is outside the window. Same rule: don't log it. If the specific date is inside the window, you log it in Jotform as normal.",
+        pros: ["Keeps Jotform for cases the team can actually book", "Sends holiday and long-absence cases to the process built for them"],
+        cons: ["Staff need to check how far IBA is showing before deciding"],
+        differentiation: "The window is <strong>whichever is shorter</strong>: 1 month from contact, or the last date IBA shows. If IBA only shows 2 or 3 weeks, anything past that is outside the window."
+      },
+      {
         name: "When to Log a Case in Jotform",
-        definition: "If there's no schedule in IBA and the tenant has a preference, log the case in Jotform. Do the same if a schedule exists but isn't convenient for the tenant, or falls outside the top 15.",
+        definition: "If the request is inside the window and there is no schedule in IBA but the tenant has a preference, log the case in Jotform. Do the same if a schedule exists but isn't convenient for the tenant, or falls outside the top 15. A specific date inside the window is logged in Jotform.",
         example: "IBA has no matching slot, but the tenant gave a clear preference through the Jotform link. You log the case in Jotform for the Jotform / Exceptions Team to pick up.",
         pros: ["Covers every situation where IBA can't get the booking done directly", "One consistent action, whatever the reason"],
         cons: ["Don't log a case if the tenant hasn't given a preference. There's nothing for Jotform to work from."],
@@ -218,14 +226,19 @@ var LESSONS = [
     ],
     examples: [
       { weak: "Trying to book a slot outside the top 15 yourself", strong: "Logging the case in Jotform instead" },
-      { weak: "Logging every booking in Jotform just to be safe", strong: "Only logging cases where IBA can't complete the booking directly" }
+      { weak: "Logging every booking in Jotform just to be safe", strong: "Only logging cases where IBA can't complete the booking directly" },
+      { weak: "Logging a holiday request or a date outside IBA's window in Jotform", strong: "Following the hold, blacklist or Access Issue process instead" }
     ],
-    why: "Booking staff are the first line. Getting the check-IBA-first habit right, and knowing exactly when to hand off, keeps bookings fast for the cases that don't need extra help, and gets the right cases to the team equipped to handle them.<br><br><strong>Check IBA. Top 15 and convenient? Book it. Otherwise, log it in Jotform.</strong>",
+    why: "Booking staff are the first line. Getting the check-IBA-first habit right, and knowing exactly when to hand off, keeps bookings fast for the cases that don't need extra help, and gets the right cases to the team equipped to handle them.<br><br><strong>Check IBA. Top 15 and convenient? Book it. Outside the window? Don't log it. Otherwise, log it in Jotform.</strong>",
     questions: [
       { q: "IBA shows a slot that matches the tenant's preference and is convenient, ranked 20th. What do you do?", options: ["Book it, rank doesn't matter here", "Log the case in Jotform", "Ask the tenant to pick another time", "Wait for a better-ranked slot"], correct: 1 },
       { q: "What's the first thing booking staff check for any booking request?", options: ["OAS", "Sandbox", "IBA", "The tracker"], correct: 2 },
       { q: "IBA has no matching slot at all, and the tenant has given a preference. What do you do?", options: ["Log the case in Jotform", "Close the request", "Try OAS yourself", "Wait for the tenant to call"], correct: 0 },
-      { q: "Which of these is NOT a reason to log a case in Jotform?", options: ["No schedule in IBA", "Schedule exists but isn't convenient", "Schedule exists, is convenient, and ranks in the top 15", "Schedule exists but falls outside the top 15"], correct: 2 }
+      { q: "Which of these is NOT a reason to log a case in Jotform?", options: ["No schedule in IBA", "Schedule exists but isn't convenient", "Schedule exists, is convenient, and ranks in the top 15", "Schedule exists but falls outside the top 15"], correct: 2 },
+      { q: "A tenant is going on holiday for 6 weeks and wants a booking after they're back. What do you do?", options: ["Log the case in Jotform", "Don't log it. Follow the matching process (hold, blacklist or Access Issue)", "Book the nearest IBA slot", "Close the request"], correct: 1 },
+      { q: "What is IBA's window for logging a case?", options: ["Always 2 weeks", "Always 4 weeks or more", "Up to 1 month from contact, or the last date IBA shows, whichever comes first", "From the date the case was logged"], correct: 2 },
+      { q: "A tenant asks for 3 November, which is outside IBA's window. What do you do?", options: ["Log it in Jotform", "Don't log it", "Ask them to pick another date", "Book it in OAS"], correct: 1 },
+      { q: "A tenant asks for a specific date inside IBA's window, and IBA has no matching slot. What do you do?", options: ["Don't log it", "Log it in Jotform", "Book it in Sandbox", "Wait until the date is closer"], correct: 1 }
     ]
   },
   {
@@ -268,16 +281,16 @@ var LESSONS = [
     blurb: "Once a case reaches Jotform, rank no longer blocks a booking the way it did for booking staff. This lesson covers exactly how the rank override works.",
     sections: [
       {
-        name: "Rank No Longer Applies, 3-4+ Weeks Out",
-        definition: "Check IBA again. Book any slot 3-4+ weeks from today, regardless of rank. This also covers preferences further out than IBA's own ~2-week generation window.",
-        example: "A tenant's preference is five weeks away. IBA doesn't generate that far out yet, but once a slot in that window appears, you can book it whatever its rank.",
+        name: "Rank No Longer Applies, 3-4 Weeks Out",
+        definition: "Check IBA again. Book any slot 3-4 weeks from today, regardless of rank.",
+        example: "A tenant's preference is 3 to 4 weeks away and IBA shows a matching slot in that range. You can book it whatever its rank.",
         pros: ["Opens up bookings the top 15 rule would have blocked", "Covers preferences the system hasn't generated slots for yet"],
         cons: ["This only applies once a case has reached Jotform. It doesn't apply back at booking staff"],
-        differentiation: "<strong>3-4+ weeks from today</strong> is measured from the day you're making the booking, not the day the tenant submitted their preference."
+        differentiation: "<strong>3-4 weeks from today</strong> is measured from the day you're making the booking, not the day the tenant submitted their preference."
       },
       {
         name: "Sooner Than 3-4 Weeks: Lowest Rank in the Week",
-        definition: "If the tenant's preference doesn't allow for a 3-4+ week booking, still don't block on rank. Book the best-ranked (lowest rank number) slot available within that specific preferred week instead.",
+        definition: "If the tenant's preference doesn't allow for a 3-4 week booking, still don't block on rank. Book the best-ranked (lowest rank number) slot available within that specific preferred week instead.",
         example: "The tenant wants next week. You don't wait for a top-15 slot. You take whichever slot has the lowest rank number within that week and book it.",
         pros: ["Keeps bookings moving even when the tenant wants something soon", "Still gives you a clear rule for which slot to pick"],
         cons: ["Don't default to the first slot you see. Compare ranks within that week first"],
@@ -285,13 +298,13 @@ var LESSONS = [
       }
     ],
     examples: [
-      { weak: "Waiting for a top-15 slot once a case is already in Jotform", strong: "Booking any slot 3-4+ weeks out, or the lowest-rank slot in the tenant's specific week if sooner" },
-      { weak: "Measuring \"3-4+ weeks\" from when the tenant submitted their preference", strong: "Measuring it from today, the day you're making the booking" }
+      { weak: "Waiting for a top-15 slot once a case is already in Jotform", strong: "Booking any slot 3-4 weeks out, or the lowest-rank slot in the tenant's specific week if sooner" },
+      { weak: "Measuring \"3-4 weeks\" from when the tenant submitted their preference", strong: "Measuring it from today, the day you're making the booking" }
     ],
-    why: "Rank exists to keep bookings efficient, not to block them. Once a case is in Jotform, the rank-override rule gives you a clear way to keep moving whether the tenant's preference is weeks away or next week.<br><br><strong>3-4+ weeks out: any rank. Sooner: lowest rank in that week.</strong>",
+    why: "Rank exists to keep bookings efficient, not to block them. Once a case is in Jotform, the rank-override rule gives you a clear way to keep moving whether the tenant's preference is weeks away or next week.<br><br><strong>3-4 weeks out: any rank. Sooner: lowest rank in that week.</strong>",
     questions: [
       { q: "A tenant's preference is 6 weeks away. What rank does the slot need?", options: ["Top 15", "Top 5", "Rank doesn't matter", "No slot can be booked that far out"], correct: 2 },
-      { q: "\"3-4+ weeks\" is measured from which date?", options: ["The date the tenant submitted their preference", "Today, the day the booking is being made", "The date the case was logged", "The date IBA last updated"], correct: 1 },
+      { q: "\"3-4 weeks\" is measured from which date?", options: ["The date the tenant submitted their preference", "Today, the day the booking is being made", "The date the case was logged", "The date IBA last updated"], correct: 1 },
       { q: "The tenant wants a booking next week. What do you do?", options: ["Tell them it's not possible", "Book the lowest-rank slot available in that week", "Wait until it's 3-4 weeks away", "Only book if it's top 15"], correct: 1 },
       { q: "Where does the rank-override rule apply?", options: ["Everywhere, including booking staff's first attempt", "Only once a case has reached Jotform", "Only for Regional properties", "Only for vacant properties"], correct: 1 }
     ]
@@ -371,8 +384,8 @@ var LESSONS = [
     sections: [
       {
         name: "The Full Process at a Glance",
-        definition: "Booking staff check IBA. A top-15, convenient match gets booked directly. Otherwise, the case is logged in Jotform. The Jotform / Exceptions Team identifies the preference, then checks IBA again under the rank-override rule (any rank 3-4+ weeks out, or lowest rank in the tenant's week if sooner). No match in IBA leads to OAS. No match there leads to Sandbox for Non-regional properties, or the tracker for Regional properties.",
-        example: "A tenant's preference falls outside the top 15 in IBA. Booking staff log the case in Jotform. The Jotform / Exceptions Team confirms the preference, rechecks IBA under the rank-override rule, and books a slot 3-4+ weeks out at whatever rank is available.",
+        definition: "Booking staff check IBA. A top-15, convenient match gets booked directly. Next they check IBA's window (up to 1 month from contact, or the last date IBA shows, whichever is first): holiday requests and specific dates outside it are not logged and follow the hold, blacklist or Access Issue process. Everything else is logged in Jotform. The Jotform / Exceptions Team identifies the preference, then checks IBA again under the rank-override rule (any rank 3-4 weeks out, or lowest rank in the tenant's week if sooner). No match in IBA leads to OAS. No match there leads to Sandbox for Non-regional properties, or the tracker for Regional properties.",
+        example: "A tenant's preference falls outside the top 15 in IBA. Booking staff log the case in Jotform. The Jotform / Exceptions Team confirms the preference, rechecks IBA under the rank-override rule, and books a slot 3-4 weeks out at whatever rank is available.",
         pros: ["One process for every case, from first attempt to completed booking", "Easy to follow and easy to check"],
         cons: ["Skipping a step, like the OAS check, can mean missing a booking that was already possible"],
         differentiation: "Booking staff decide <strong>whether</strong> a case goes to Jotform. The Jotform / Exceptions Team decides <strong>how</strong> it gets booked from there."
