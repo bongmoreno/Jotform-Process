@@ -164,7 +164,7 @@
     <div class="menu-header"><span class="brand">Detector Inspector &nbsp;·&nbsp; Jotform Training</span></div>
     <div class="menu-wrap">
       <h2>Handling Jotform Cases</h2>
-      <div class="menu-sub">6 lessons. Pick one to start or continue.</div>
+      <div class="menu-sub">7 lessons. Pick one to start or continue.</div>
       <div id="lessonList"></div>
     </div>
   </div>
@@ -189,15 +189,15 @@ var LESSONS = [
   {
     id: 1,
     title: "When a Case Goes to Jotform",
-    blurb: "Every booking starts with booking staff trying IBA first. This lesson covers when a booking can be completed directly, and when it needs to be logged in Jotform instead.",
+    blurb: "Every booking starts with a DI staff member trying IBA first. This lesson covers who captures a preference, when a booking can be completed directly, and when it needs to be logged in Jotform instead.",
     sections: [
       {
         name: "Check IBA First",
-        definition: "For every booking request, check IBA for a schedule that matches the tenant's preference.",
-        example: "A booking request comes in for a property. You open IBA and check what's available against what the tenant asked for.",
+        definition: "DI Staff are any Detector Inspector staff member trained in IBA who handles a tenant's booking request, in any department. For every booking request, check IBA for a schedule that matches the tenant's preference.",
+        example: "A tenant's booking request comes to you. You're trained in IBA, so you open IBA and check what's available against what the tenant asked for.",
         pros: ["Keeps every booking attempt starting the same way", "IBA is the fastest path when a slot is available"],
-        cons: ["Don't skip straight to Jotform without checking IBA first"],
-        differentiation: "IBA is always the <strong>first</strong> stop, not something you skip because it looks slow to check."
+        cons: ["Staff who aren't trained in IBA don't capture preferences", "Don't skip straight to Jotform without checking IBA first"],
+        differentiation: "IBA is always the <strong>first</strong> stop, and only staff <strong>trained in IBA</strong> capture tenant preferences."
       },
       {
         name: "The Top 15 Rule",
@@ -205,7 +205,7 @@ var LESSONS = [
         example: "IBA shows a slot that matches the tenant's preference and ranks 8th. You offer it and book it. Done.",
         pros: ["Keeps efficient bookings efficient", "No case is created if the booking can be completed directly"],
         cons: ["A slot ranked outside the top 15 doesn't count, even if it's otherwise a perfect match"],
-        differentiation: "The top 15 rule applies only to <strong>booking staff</strong>. It's waived once a case reaches Jotform."
+        differentiation: "The top 15 rule applies only to <strong>DI Staff</strong>. It's waived once a case reaches Jotform."
       },
       {
         name: "Check IBA's Window First",
@@ -229,63 +229,72 @@ var LESSONS = [
       { weak: "Logging every booking in Jotform just to be safe", strong: "Only logging cases where IBA can't complete the booking directly" },
       { weak: "Logging a holiday request or a date outside IBA's window in Jotform", strong: "Following the hold, blacklist or Access Issue process instead" }
     ],
-    why: "Booking staff are the first line. Getting the check-IBA-first habit right, and knowing exactly when to hand off, keeps bookings fast for the cases that don't need extra help, and gets the right cases to the team equipped to handle them.<br><br><strong>Check IBA. Top 15 and convenient? Book it. Outside the window? Don't log it. Otherwise, log it in Jotform.</strong>",
+    why: "DI Staff are the first line. Getting the check-IBA-first habit right, and knowing exactly when to hand off, keeps bookings fast for the cases that don't need extra help, and gets the right cases to the team equipped to handle them.<br><br><strong>Check IBA. Top 15 and convenient? Book it. Outside the window? Don't log it. Otherwise, log it in Jotform.</strong>",
     questions: [
       { q: "IBA shows a slot that matches the tenant's preference and is convenient, ranked 20th. What do you do?", options: ["Book it, rank doesn't matter here", "Log the case in Jotform", "Ask the tenant to pick another time", "Wait for a better-ranked slot"], correct: 1 },
-      { q: "What's the first thing booking staff check for any booking request?", options: ["OAS", "Sandbox", "IBA", "The tracker"], correct: 2 },
+      { q: "What's the first thing DI Staff check for any booking request?", options: ["OAS", "Slot Finder", "IBA", "The tracker"], correct: 2 },
+      { q: "Who captures a tenant's preference in Jotform?", options: ["Only the booking team", "Any DI staff member trained in IBA who handles the booking request, in any department", "Only the Jotform / Exceptions Team", "The tenant, with no staff involved"], correct: 1 },
       { q: "IBA has no matching slot at all, and the tenant has given a preference. What do you do?", options: ["Log the case in Jotform", "Close the request", "Try OAS yourself", "Wait for the tenant to call"], correct: 0 },
       { q: "Which of these is NOT a reason to log a case in Jotform?", options: ["No schedule in IBA", "Schedule exists but isn't convenient", "Schedule exists, is convenient, and ranks in the top 15", "Schedule exists but falls outside the top 15"], correct: 2 },
       { q: "A tenant is going on holiday for 6 weeks and wants a booking after they're back. What do you do?", options: ["Log the case in Jotform", "Don't log it. Follow the matching process (hold, blacklist or Access Issue)", "Book the nearest IBA slot", "Close the request"], correct: 1 },
       { q: "What is IBA's window for logging a case?", options: ["Always 2 weeks", "Always 4 weeks or more", "Up to 1 month from contact, or the last date IBA shows, whichever comes first", "From the date the case was logged"], correct: 2 },
-      { q: "A tenant asks for 3 November, which is outside IBA's window. What do you do?", options: ["Log it in Jotform", "Don't log it", "Ask them to pick another date", "Book it in OAS"], correct: 1 },
-      { q: "A tenant asks for a specific date inside IBA's window, and IBA has no matching slot. What do you do?", options: ["Don't log it", "Log it in Jotform", "Book it in Sandbox", "Wait until the date is closer"], correct: 1 }
+      { q: "A tenant asks for 3 November, which is outside IBA's window. What do you do?", options: ["Log it in Jotform", "Don't log it", "Ask them to pick another date", "Book it in OAS"], correct: 1 }
     ]
   },
   {
     id: 2,
     title: "Picking Up a Logged Case",
-    blurb: "Once a case lands in Jotform, it belongs to the Jotform / Exceptions Team. This lesson covers what happens the moment a case is picked up.",
+    blurb: "Once a case lands in Jotform, it belongs to the Jotform / Exceptions Team until it's booked or closed. This lesson covers the first moves, including the tenant's booking method.",
     sections: [
       {
-        name: "Identify the Preference",
-        definition: "Start by identifying the tenant's preference for the case that's been logged.",
-        example: "A case is logged in Jotform. Before doing anything else, you check what the tenant asked for.",
-        pros: ["Makes sure you're solving for what the tenant actually wants", "Avoids offering a schedule they can't use"],
+        name: "Identify the Preference and Booking Method",
+        definition: "Start by identifying the tenant's preference and their booking method for the logged case: Book automatically or Contact me first.",
+        example: "A case is logged in Jotform. Before doing anything else, you check what days and times the tenant asked for, and whether they chose Book automatically or Contact me first.",
+        pros: ["Makes sure you're solving for what the tenant actually wants", "Tells you straight away whether you book directly or offer first"],
         cons: ["Don't skip this and jump straight to checking IBA"],
-        differentiation: "This step is about the <strong>tenant's</strong> preference, not the booking system."
+        differentiation: "This step is about the <strong>tenant's</strong> choices, not the booking system."
+      },
+      {
+        name: "Book Automatically vs Contact Me First",
+        definition: "Book automatically: when you find a matching slot, book it straight away. The tenant receives the usual booking confirmation, with no offer or staging needed. Contact me first: offer the slot to the tenant by SMS first, and follow the Staging Process if they don't reply.",
+        example: "Two tenants both have a matching IBA slot. The first chose Book automatically, so you book it. The second chose Contact me first, so you send them the offer by SMS and wait for their reply.",
+        pros: ["Respects what the tenant asked for", "Avoids sending offers that don't need a reply"],
+        cons: ["Don't book a Contact me first tenant without offering first"],
+        differentiation: "Book automatically = <strong>book it</strong>. Contact me first = <strong>offer it</strong>, then staging if there's no reply."
       },
       {
         name: "Every Case Is Now Yours",
-        definition: "The Jotform / Exceptions Team owns every case logged in Jotform, including the rank-override rule, the OAS fallback, and the Sandbox/tracker step.",
-        example: "A case arrives with no schedule in IBA. It's now the Jotform / Exceptions Team's job to work it through to a completed booking.",
-        pros: ["One team, one clear owner for every logged case", "Nothing falls through the cracks between booking staff and Jotform"],
+        definition: "The Jotform / Exceptions Team owns every case logged in Jotform until it's booked or closed. You find a schedule (IBA, OAS, Slot Finder or a regional trip), book it or offer it, follow the Staging Process when the tenant doesn't respond, and resolve the case in Jotform.",
+        example: "A case arrives with no schedule in IBA. It's now the Jotform / Exceptions Team's job to work it through to a completed booking, or to an Access Issue if the tenant can't be reached.",
+        pros: ["One team, one clear owner for every logged case", "Nothing falls through the cracks between DI Staff and Jotform"],
         cons: ["This is currently a pilot, so how it's working is still being reviewed"],
-        differentiation: "Booking staff make the <strong>first attempt</strong>. Jotform / Exceptions <strong>finishes the job</strong>."
+        differentiation: "DI Staff make the <strong>first attempt</strong>. Jotform / Exceptions <strong>finishes the job</strong>."
       }
     ],
     examples: [
-      { weak: "Checking IBA again before confirming what the tenant wants", strong: "Identifying the tenant's preference first" },
-      { weak: "Assuming booking staff already checked everything that's needed", strong: "Working the case through every remaining step yourself" }
+      { weak: "Checking IBA again before confirming what the tenant wants", strong: "Identifying the tenant's preference and booking method first" },
+      { weak: "Offering a slot by SMS to a Book automatically tenant and waiting for a reply", strong: "Booking it straight away so they get the usual confirmation" }
     ],
-    why: "A case that's been logged in Jotform still needs a clear first move. Confirming the tenant's preference before touching anything else means the rest of the process, whichever path it takes, starts from the right place.<br><br><strong>Confirm the preference first. Then the case is yours to finish.</strong>",
+    why: "A case that's been logged in Jotform still needs a clear first move. Confirming the preference and booking method before touching anything else means the rest of the process, whichever path it takes, starts from the right place.<br><br><strong>Confirm the preference and booking method first. Then the case is yours to finish.</strong>",
     questions: [
-      { q: "What's the first thing you do with a newly logged case?", options: ["Check OAS", "Identify the tenant's preference", "Check the tracker", "Close the case"], correct: 1 },
-      { q: "Who owns a case once it's logged in Jotform?", options: ["Booking staff", "The regional team", "The Jotform / Exceptions Team", "Whoever logged it"], correct: 2 },
-      { q: "What is the current status of the Jotform / Exceptions Team owning these cases?", options: ["Permanent and final", "A pilot, being reviewed", "Optional, team's choice", "Only for Regional properties"], correct: 1 },
-      { q: "Which of these does the Jotform / Exceptions Team NOT handle?", options: ["The rank-override rule", "The OAS fallback", "The Sandbox/tracker step", "Booking staff's first attempt in IBA"], correct: 3 }
+      { q: "What's the first thing you do with a newly logged case?", options: ["Check OAS", "Identify the tenant's preference and booking method", "Check the tracker", "Close the case"], correct: 1 },
+      { q: "You find a matching slot for a Book automatically tenant. What do you do?", options: ["Offer it by SMS and wait", "Book it straight away", "Log it in the tracker", "Raise an Access Issue"], correct: 1 },
+      { q: "You find a matching slot for a Contact me first tenant. What do you do?", options: ["Book it straight away", "Offer it by SMS and follow the Staging Process if there's no reply", "Wait for the tenant to call", "Close the case"], correct: 1 },
+      { q: "Who owns a case once it's logged in Jotform?", options: ["DI Staff", "The Planning / Regional Team", "The Jotform / Exceptions Team", "Whoever logged it"], correct: 2 },
+      { q: "When does the Jotform / Exceptions Team's ownership of a case end?", options: ["When the first SMS is sent", "When the case is booked or closed", "After 48 hours", "When the tracker is updated"], correct: 1 }
     ]
   },
   {
     id: 3,
     title: "The Rank-Override Rule",
-    blurb: "Once a case reaches Jotform, rank no longer blocks a booking the way it did for booking staff. This lesson covers exactly how the rank override works.",
+    blurb: "Once a case reaches Jotform, rank no longer blocks a booking the way it did for DI Staff. This lesson covers exactly how the rank override works.",
     sections: [
       {
         name: "Rank No Longer Applies, 3-4 Weeks Out",
         definition: "Check IBA again. Book any slot 3-4 weeks from today, regardless of rank.",
         example: "A tenant's preference is 3 to 4 weeks away and IBA shows a matching slot in that range. You can book it whatever its rank.",
         pros: ["Opens up bookings the top 15 rule would have blocked", "Keeps bookings moving for preferences a few weeks out"],
-        cons: ["This only applies once a case has reached Jotform. It doesn't apply back at booking staff"],
+        cons: ["This only applies once a case has reached Jotform. It doesn't apply to DI Staff's first attempt"],
         differentiation: "<strong>3-4 weeks from today</strong> is measured from the day you're making the booking, not the day the tenant submitted their preference."
       },
       {
@@ -306,104 +315,161 @@ var LESSONS = [
       { q: "A tenant's preference is 4 weeks away and IBA shows a matching slot. What rank does the slot need?", options: ["Top 15", "Top 5", "Rank doesn't matter", "No slot can be booked that far out"], correct: 2 },
       { q: "\"3-4 weeks\" is measured from which date?", options: ["The date the tenant submitted their preference", "Today, the day the booking is being made", "The date the case was logged", "The date IBA last updated"], correct: 1 },
       { q: "The tenant wants a booking next week. What do you do?", options: ["Tell them it's not possible", "Book the lowest-rank slot available in that week", "Wait until it's 3-4 weeks away", "Only book if it's top 15"], correct: 1 },
-      { q: "Where does the rank-override rule apply?", options: ["Everywhere, including booking staff's first attempt", "Only once a case has reached Jotform", "Only for Regional properties", "Only for vacant properties"], correct: 1 }
+      { q: "Where does the rank-override rule apply?", options: ["Everywhere, including DI Staff's first attempt", "Only once a case has reached Jotform", "Only for Regional properties", "Only for vacant properties"], correct: 1 }
     ]
   },
   {
     id: 4,
-    title: "OAS and Sandbox: When IBA Has Nothing",
-    blurb: "IBA doesn't always have an answer. This lesson covers the fallback tools available once IBA runs out of options.",
+    title: "OAS and Slot Finder: When IBA Has Nothing",
+    blurb: "IBA doesn't always have an answer. This lesson covers the next two places to look: OAS, then Slot Finder for non-regional properties.",
     sections: [
       {
         name: "Check OAS Next",
-        definition: "If no matching slot is found in IBA, check OAS, the old booking system. If a slot is found there, offer it and complete the booking manually.",
-        example: "IBA has nothing under either rank-override rule. You check OAS and find a slot that works. You offer it to the tenant and book it manually.",
-        pros: ["A second system to check before ruling out a booking entirely", "Manual booking is still a completed booking"],
+        definition: "If no matching slot is found in IBA, check OAS, the old booking system. If a slot is found there, book it or offer it (depending on the booking method) and complete the booking manually.",
+        example: "IBA has nothing under either rank-override rule. You check OAS and find a slot that works. The tenant chose Contact me first, so you offer it by SMS, then book it manually once they accept.",
+        pros: ["A second system to check before ruling out a booking", "Manual booking is still a completed booking"],
         cons: ["OAS is a fallback here, not the first place to look"],
-        differentiation: "IBA is checked <strong>first</strong> (twice, under the rank-override rule). OAS is the <strong>fallback</strong> once IBA has nothing."
+        differentiation: "IBA is checked <strong>first</strong> (under the rank-override rule). OAS is the <strong>fallback</strong> once IBA has nothing."
       },
       {
-        name: "Sandbox for Non-regional Properties",
-        definition: "If there's no schedule in IBA or OAS, and the property is Non-regional, use Sandbox, together with the mapping system or Google Maps, to locate a technician, date and time. Offer it to the tenant and book manually.",
-        example: "Neither IBA nor OAS has anything for a Non-regional property. You use Sandbox and a map to find a technician who can realistically get there, then offer that date and book it.",
-        pros: ["Gives you a way forward when both systems come up empty", "Keeps the booking manual and deliberate, matched to a real technician"],
-        cons: ["Sandbox is for Non-regional properties. Regional properties follow a different path (next lesson)"],
-        differentiation: "Sandbox is <strong>Non-regional only</strong>. It's the last resort after IBA and OAS."
+        name: "Slot Finder for Non-regional Properties (Pilot)",
+        definition: "If there's no schedule in IBA or OAS and the property is Non-regional, use Slot Finder (Slot finder tab on the Preference Dashboard). It looks for open slots up to 6 weeks ahead in DI's scheduling data, using the written booking rules for travel time, job limits and skills, and gives up to 3 suggestions per case: technician, date and arrival window.",
+        example: "Neither IBA nor OAS has anything for a Non-regional property. Slot Finder suggests a technician on Tuesday, 9-11 am. You check it, then book or offer it.",
+        pros: ["Replaces searching Sandbox and maps by hand", "Applies DI's booking rules for you, up to 6 weeks out"],
+        cons: ["It's a pilot, so wording and rules may change", "Regional properties don't go through Slot Finder (next lesson)"],
+        differentiation: "Slot Finder is <strong>Non-regional only</strong>, after IBA and OAS. It <strong>suggests</strong>; it never books on its own."
+      },
+      {
+        name: "Check Every Suggestion Before Using It",
+        definition: "Before using a Slot Finder suggestion, check it: Preview OCD, travel time and the technician's day notes. Book automatically: book it manually in OAS or the Standard Booking Page and add the P5 flag Slot Finder suggests. Contact me first: offer it first, then book it the same way once the tenant accepts. If Slot Finder has no suggestion, the case goes to the tracker.",
+        example: "Preview OCD shows the job fits, travel is fine and the day notes don't rule it out. The tenant chose Book automatically, so you book it manually in OAS and add the P5 flag.",
+        pros: ["Catches anything the scheduling data can't see, such as day notes", "The P5 flag helps protect the booking from internal cancellation"],
+        cons: ["Don't book a suggestion without checking it first", "Don't forget the P5 flag"],
+        differentiation: "Slot Finder finds the slot. <strong>You</strong> check it, book it and add the <strong>P5 flag</strong>."
       }
     ],
     examples: [
-      { weak: "Giving up on a booking once IBA has nothing available", strong: "Checking OAS, then Sandbox, before treating a Non-regional property as unbookable" },
-      { weak: "Using Sandbox for a Regional property", strong: "Using Sandbox only for Non-regional properties" }
+      { weak: "Giving up on a Non-regional booking once IBA has nothing available", strong: "Checking OAS, then Slot Finder, before sending it to the tracker" },
+      { weak: "Booking a Slot Finder suggestion without checking OCD or day notes", strong: "Checking Preview OCD, travel and day notes, then booking manually with the P5 flag" },
+      { weak: "Using Slot Finder for a Regional property", strong: "Sending Regional properties to the tracker" }
     ],
-    why: "IBA is fast, but it isn't the only tool. OAS and Sandbox exist so that a case doesn't stall just because the newer system doesn't have an answer yet.<br><br><strong>No IBA? Try OAS. Still nothing, and it's Non-regional? Use Sandbox.</strong>",
+    why: "IBA is fast, but it isn't the only tool. OAS and Slot Finder exist so that a case doesn't stall just because IBA doesn't have an answer yet.<br><br><strong>No IBA? Try OAS. Still nothing, and it's Non-regional? Use Slot Finder, check the suggestion, then book or offer it with the P5 flag.</strong>",
     questions: [
-      { q: "What do you check after IBA has no matching slot?", options: ["The tracker", "OAS, the old booking system", "Sandbox straight away", "Nothing, the case is closed"], correct: 1 },
-      { q: "When do you use Sandbox?", options: ["Before checking IBA", "Before checking OAS", "When IBA and OAS both have nothing, for Non-regional properties", "For every Regional property"], correct: 2 },
-      { q: "What do you use alongside Sandbox to find a technician?", options: ["The tracker", "A mapping system or Google Maps", "OAS", "IBA's extended options"], correct: 1 },
-      { q: "A booking found through OAS is completed how?", options: ["Automatically by the system", "Manually, by you", "By the regional team", "It can't be completed through OAS"], correct: 1 }
+      { q: "What do you check after IBA has no matching slot?", options: ["The tracker", "OAS, the old booking system", "Slot Finder straight away", "Nothing, the case is closed"], correct: 1 },
+      { q: "When do you use Slot Finder?", options: ["Before checking IBA", "Before checking OAS", "When IBA and OAS both have nothing, for Non-regional properties", "For every Regional property"], correct: 2 },
+      { q: "What do you check before using a Slot Finder suggestion?", options: ["Nothing, it's already checked", "Preview OCD, travel time and the technician's day notes", "Only the tenant's address", "The tracker"], correct: 1 },
+      { q: "How is a Slot Finder booking made?", options: ["Slot Finder books it automatically", "Manually in OAS or the Standard Booking Page, with the suggested P5 flag", "By the regional team", "Through the tracker"], correct: 1 },
+      { q: "Slot Finder has no suggestion for a Non-regional property. What next?", options: ["Close the case", "The case goes to the tracker", "Use Sandbox", "Raise an Access Issue"], correct: 1 }
     ]
   },
   {
     id: 5,
-    title: "Regional Properties: The Tracker",
-    blurb: "Regional properties follow a different fallback when nothing's available in IBA or OAS.",
+    title: "The Tracker: Regional and No Schedule Anywhere",
+    blurb: "When there's no schedule in IBA, OAS or Slot Finder, or the property is Regional, the case goes to the tracker for the Planning / Regional Team.",
     sections: [
       {
-        name: "Log It in the Tracker",
-        definition: "If there's no schedule in IBA or OAS, and the property is Regional, log the case in the tracker.",
-        example: "IBA and OAS both have nothing for a Regional property. Instead of Sandbox, you log the case in the tracker for the regional team.",
-        pros: ["Regional bookings depend on trip planning, so they go through the tracker instead of a one-off manual search", "Keeps regional trip arrangements organised in one place"],
-        cons: ["Don't use Sandbox for a Regional property. That path is Non-regional only"],
-        differentiation: "Non-regional goes to <strong>Sandbox</strong>. Regional goes to the <strong>tracker</strong>."
+        name: "Make Sure the Property Is in the Tracker",
+        definition: "If there's no schedule in IBA, OAS or Slot Finder, or the property is Regional, the case goes to the tracker (JOTFORMS_1.xlsx, Connected to Live Data tab). If the property isn't in the tab yet, the Jotform / Exceptions Team adds it.",
+        example: "A Regional property has nothing in IBA or OAS. You check the Connected to Live Data tab. It isn't there, so you add it (the dashboard's Copy new rows for sheet button gives you the row ready to paste).",
+        pros: ["One shared list Planning works from", "Regional bookings depend on trip planning, so they go to the team that plans trips"],
+        cons: ["Don't use Slot Finder for a Regional property", "Don't assume a new property is already in the tab"],
+        differentiation: "Non-regional goes to <strong>Slot Finder</strong> first. Regional, or nothing anywhere, goes to the <strong>tracker</strong>."
       },
       {
-        name: "Wait for the Regional Team, Then Close the Loop",
-        definition: "Once the regional team arranges a trip and leaves notes in the tracker, contact the tenant, offer the schedule, and complete the booking.",
-        example: "The regional team's note in the tracker confirms a trip is arranged for the tenant's area. You contact the tenant, offer the date, and complete the booking.",
-        pros: ["The regional team's trip planning does the heavy lifting", "You finish the loop with the tenant once there's something to offer"],
-        cons: ["Don't contact the tenant before the tracker shows a trip has been arranged"],
-        differentiation: "Logging in the tracker <strong>starts</strong> the regional path. The regional team's note is what lets you <strong>finish</strong> it."
+        name: "Planning Records Availability, You Close the Loop",
+        definition: "The Planning / Regional Team arranges availability or a trip and records the Technician, Availability Date, Time Window and Comment in the tracker. The Jotform / Exceptions Team checks for these notes (Sync Planning notes or Open in tracker on the dashboard), then books or offers the schedule depending on the booking method.",
+        example: "Planning adds Sam Lee, 18 Nov, 8-10 am for a Regional property. You sync the notes on the dashboard, see it, and offer it to the Contact me first tenant by SMS.",
+        pros: ["The Planning / Regional Team's trip planning does the heavy lifting", "The dashboard shows which properties have notes and which don't"],
+        cons: ["Don't contact the tenant before availability has been recorded"],
+        differentiation: "Adding the property <strong>starts</strong> the tracker path. Planning's note is what lets you <strong>finish</strong> it."
       }
     ],
     examples: [
-      { weak: "Using Sandbox to search for a technician for a Regional property", strong: "Logging the case in the tracker for the regional team" },
-      { weak: "Contacting the tenant before the tracker shows a trip has been arranged", strong: "Waiting for the regional team's note, then contacting the tenant" }
+      { weak: "Using Slot Finder or Sandbox for a Regional property", strong: "Making sure it's in the Connected to Live Data tab for Planning" },
+      { weak: "Contacting the tenant before Planning has recorded availability", strong: "Syncing the notes, then booking or offering the schedule" }
     ],
-    why: "Regional bookings depend on trips being planned across a wider area, so they can't be resolved the same way as a Non-regional Sandbox search. The tracker is what connects your case to that planning.<br><br><strong>Log it, wait for the regional team's note, then offer and book.</strong>",
+    why: "Some bookings can only be solved by planning a trip or making availability. The tracker connects your case to the team that does that, and the dashboard shows you when they've done it.<br><br><strong>Make sure it's in the tracker, wait for Planning's note, then book or offer.</strong>",
     questions: [
-      { q: "No schedule in IBA or OAS, and the property is Regional. What do you do?", options: ["Use Sandbox", "Log the case in the tracker", "Close the case", "Book manually straight away"], correct: 1 },
-      { q: "What tells you it's time to contact the tenant?", options: ["A set number of days passing", "The regional team's note in the tracker confirming a trip is arranged", "The tenant calling in", "Nothing, contact them immediately"], correct: 1 },
-      { q: "Who arranges the regional trip?", options: ["You", "The tenant", "The regional team", "Booking staff"], correct: 2 },
-      { q: "What's the last step once the trip is arranged?", options: ["Log the case again", "Contact the tenant, offer the schedule, and complete the booking", "Check OAS again", "Escalate to a manager"], correct: 1 }
+      { q: "No schedule in IBA or OAS, and the property is Regional. What do you do?", options: ["Use Slot Finder", "Make sure it's in the tracker (Connected to Live Data) for Planning", "Close the case", "Book manually straight away"], correct: 1 },
+      { q: "A property needs to go to the tracker but isn't in the Connected to Live Data tab. Who adds it?", options: ["The tenant", "The Planning / Regional Team", "The Jotform / Exceptions Team", "Nobody, it's added automatically"], correct: 2 },
+      { q: "What does the Planning / Regional Team record in the tracker?", options: ["The tenant's phone number", "Technician, Availability Date, Time Window and Comment", "The Access Issue reason", "Nothing, they book it themselves"], correct: 1 },
+      { q: "How do you check whether Planning has left a note?", options: ["Wait for an email", "Sync Planning notes or Open in tracker on the dashboard", "Call the tenant", "Check OAS"], correct: 1 }
     ]
   },
   {
     id: 6,
+    title: "Staging and Access Issues",
+    blurb: "What to do when a Contact me first tenant doesn't reply, or turns down every schedule you offer.",
+    sections: [
+      {
+        name: "The Staging Process",
+        definition: "For Contact me first tenants: 1. Offer the schedule by SMS (Offer 1). 2. No response after 48 hours: send a follow-up SMS (Offer 2). 3. No response 36 hours after Offer 2: send the final SMS. 4. At the same time as the final SMS, raise an Access Issue and resolve the property in the Jotform live page. 5. From then on, the property follows the Access Issue process.",
+        example: "You offer a slot on Monday morning. No reply by Wednesday morning, so you send Offer 2. Still nothing by Thursday evening, so you send the final SMS, raise an Access Issue and resolve the case in Jotform.",
+        pros: ["Gives every tenant a fair chance to respond", "Stops cases sitting open with no reply"],
+        cons: ["Don't skip a step or send the final SMS early", "Don't leave the case open once the Access Issue is raised"],
+        differentiation: "<strong>48 hours</strong> after Offer 1, then <strong>36 hours</strong> after Offer 2. The Access Issue is raised <strong>at the same time</strong> as the final SMS."
+      },
+      {
+        name: "When the Tenant Declines",
+        definition: "If the tenant replies but declines the schedule, look for another schedule and offer it, up to 2 alternatives. If they decline all of them, raise an Access Issue (Occupant refuses to book, or Occupant not cooperating with booking request) and resolve the case in the Jotform live page.",
+        example: "The tenant says Tuesday doesn't work. You find a Thursday slot and offer it. They decline again, so you find a third option. When they decline that too, you raise an Access Issue and resolve the case.",
+        pros: ["Gives the tenant real choice", "Sets a clear limit so the case doesn't stay open forever"],
+        cons: ["Don't keep offering with no limit"],
+        differentiation: "A reply that says no is <strong>not</strong> the same as no reply. Declines get <strong>up to 2 alternatives</strong> before an Access Issue."
+      },
+      {
+        name: "Choosing the Access Issue",
+        definition: "Use one of the common Access Issue reasons: Occupant refuses to book; Occupant not responding to booking request; Occupant not cooperating with booking request; Occupant has not booked after repeated reminders. If none of these fits, use the Access Issue that is closest to the tenant's situation.",
+        example: "The tenant never replied to Offer 1, Offer 2 or the final SMS. You raise the Access Issue \"Occupant not responding to booking request\" and resolve the case in Jotform.",
+        pros: ["Consistent reasons make Access Issues easier to follow up", "The Access Issue process takes the case from here"],
+        cons: ["Don't pick a reason that doesn't match what happened"],
+        differentiation: "Pick the reason that <strong>matches what happened</strong>, or the <strong>closest</strong> one if none fits exactly."
+      }
+    ],
+    examples: [
+      { weak: "Leaving a case open in Jotform after raising an Access Issue", strong: "Resolving it in the Jotform live page at the same time" },
+      { weak: "Raising an Access Issue the first time a tenant says a slot doesn't suit", strong: "Offering up to 2 alternative schedules first" },
+      { weak: "Sending the final SMS straight after Offer 1", strong: "Waiting 48 hours for Offer 2, then 36 hours for the final SMS" }
+    ],
+    why: "Tenants deserve a fair chance to book, and the team needs to focus on tenants who are responding. The staging steps and the Access Issue hand-off do both.<br><br><strong>Offer 1. 48 hours: Offer 2. 36 hours: final SMS, Access Issue and resolve.</strong>",
+    questions: [
+      { q: "A Contact me first tenant hasn't replied 48 hours after Offer 1. What do you do?", options: ["Raise an Access Issue", "Send a follow-up SMS (Offer 2)", "Close the case", "Book the slot anyway"], correct: 1 },
+      { q: "When do you send the final SMS?", options: ["24 hours after Offer 1", "36 hours after Offer 2 with no response", "1 week after Offer 1", "Only if the tenant asks"], correct: 1 },
+      { q: "What happens at the same time as the final SMS?", options: ["Nothing, you wait another week", "You raise an Access Issue and resolve the property in the Jotform live page", "You call the agency", "You log it in the tracker"], correct: 1 },
+      { q: "A tenant declines the schedule you offered. What do you do?", options: ["Raise an Access Issue straight away", "Offer another schedule, up to 2 alternatives", "Close the case", "Book it anyway"], correct: 1 },
+      { q: "Which Access Issue fits a tenant who never replied to any SMS?", options: ["Occupant refuses to book", "Occupant not responding to booking request", "Property sold", "Technician unavailable"], correct: 1 },
+      { q: "None of the common Access Issue reasons fits the situation. What do you do?", options: ["Don't raise one", "Use the Access Issue that is closest to the tenant's situation", "Use \"Occupant refuses to book\" anyway", "Ask the tenant to choose"], correct: 1 }
+    ]
+  },
+  {
+    id: 7,
     title: "Putting It All Together",
     blurb: "This final lesson walks through the full process end to end, then tests you on real-world cases.",
     sections: [
       {
         name: "The Full Process at a Glance",
-        definition: "Booking staff check IBA. A top-15, convenient match gets booked directly. Next they check IBA's window (up to 1 month from contact, or the last date IBA shows, whichever is first): holiday requests and specific dates outside it are not logged and follow the hold, blacklist or Access Issue process. Everything else is logged in Jotform. The Jotform / Exceptions Team identifies the preference, then checks IBA again under the rank-override rule (any rank 3-4 weeks out, or lowest rank in the tenant's week if sooner). No match in IBA leads to OAS. No match there leads to Sandbox for Non-regional properties, or the tracker for Regional properties.",
-        example: "A tenant's preference falls outside the top 15 in IBA. Booking staff log the case in Jotform. The Jotform / Exceptions Team confirms the preference, rechecks IBA under the rank-override rule, and books a slot 3-4 weeks out at whatever rank is available.",
+        definition: "DI Staff trained in IBA check IBA. A top-15, convenient match gets booked directly. Next they check IBA's window: holiday requests and specific dates outside it are not logged. Everything else is logged in Jotform. The Jotform / Exceptions Team identifies the preference and booking method, then checks IBA again under the rank-override rule, then OAS, then Slot Finder for Non-regional properties. Regional properties, or cases with nothing anywhere, go to the tracker for the Planning / Regional Team. Book automatically tenants are booked; Contact me first tenants are offered the schedule and go through staging if they don't reply.",
+        example: "A Non-regional Contact me first tenant has nothing in IBA or OAS. Slot Finder suggests a slot, you check it and offer it by SMS. No reply after 48 hours, so you send Offer 2, then the final SMS 36 hours later, raising an Access Issue and resolving the case at the same time.",
         pros: ["One process for every case, from first attempt to completed booking", "Easy to follow and easy to check"],
         cons: ["Skipping a step, like the OAS check, can mean missing a booking that was already possible"],
-        differentiation: "Booking staff decide <strong>whether</strong> a case goes to Jotform. The Jotform / Exceptions Team decides <strong>how</strong> it gets booked from there."
+        differentiation: "DI Staff decide <strong>whether</strong> a case goes to Jotform. The Jotform / Exceptions Team decides <strong>how</strong> it gets booked, or when it moves to an Access Issue."
       }
     ],
     examples: [
-      { weak: "Handling each case from memory, in a different order each time", strong: "Following the same order every time: IBA, rank-override IBA, OAS, then Sandbox or the tracker" },
-      { weak: "Treating Regional and Non-regional properties the same at the final fallback step", strong: "Using Sandbox for Non-regional and the tracker for Regional" }
+      { weak: "Handling each case from memory, in a different order each time", strong: "Following the same order every time: IBA, rank-override IBA, OAS, Slot Finder (Non-regional), then the tracker" },
+      { weak: "Treating Book automatically and Contact me first tenants the same", strong: "Booking the first, offering to the second" }
     ],
     why: "The process only works if everyone follows it the same way. When every case moves through the same checks in the same order, tenants get a consistent experience and the right cases end up with the right team.<br><br><strong>Same checks, same order, same result.</strong>",
     questions: [
-      { q: "A booking request comes in. IBA has a matching, convenient slot ranked 5th. What happens?", options: ["Booking staff offer it and complete the booking. Done", "Log it in Jotform anyway", "Check OAS first", "Escalate to the regional team"], correct: 0 },
-      { q: "A case is logged in Jotform. The tenant's preference is 4 weeks away. What's the rule?", options: ["Book any slot in IBA that matches, regardless of rank", "Only book if it's top 15", "Wait until it's exactly 4 weeks", "Use Sandbox instead of IBA"], correct: 0 },
-      { q: "IBA and OAS both have nothing. The property is Non-regional. What next?", options: ["Log it in the tracker", "Use Sandbox and a mapping system to find a technician", "Close the case", "Wait for the regional team"], correct: 1 },
-      { q: "IBA and OAS both have nothing. The property is Regional. What next?", options: ["Use Sandbox", "Log it in the tracker and wait for the regional team's note", "Book any available slot regardless of location", "Close the case"], correct: 1 }
+      { q: "A booking request comes in. IBA has a matching, convenient slot ranked 5th. What happens?", options: ["DI Staff offer it and complete the booking. Done", "Log it in Jotform anyway", "Check OAS first", "Escalate to the regional team"], correct: 0 },
+      { q: "A case is logged in Jotform. The tenant's preference is 4 weeks away. What's the rule?", options: ["Book any slot in IBA that matches, regardless of rank", "Only book if it's top 15", "Wait until it's exactly 4 weeks", "Use Slot Finder instead of IBA"], correct: 0 },
+      { q: "IBA and OAS both have nothing. The property is Non-regional. What next?", options: ["Log it in the tracker straight away", "Use Slot Finder, check the suggestion, then book or offer it", "Close the case", "Wait for the regional team"], correct: 1 },
+      { q: "IBA and OAS both have nothing. The property is Regional. What next?", options: ["Use Slot Finder", "Make sure it's in the tracker and wait for Planning's note", "Book any available slot regardless of location", "Close the case"], correct: 1 },
+      { q: "A Contact me first tenant gets the final SMS. What else happens at the same time?", options: ["Nothing", "An Access Issue is raised and the case is resolved in Jotform", "The case goes to the tracker", "Offer 1 is sent again"], correct: 1 }
     ]
   }
 ];
+
 
 var PASS_FRACTION = 0.75;
 var STEPS = [];
@@ -428,7 +494,7 @@ function showCover() {
   document.getElementById("cover").innerHTML =
     '<div class="notion-logo">📥</div>' +
     '<h1>Handling Jotform Cases</h1>' +
-    '<p>A practical training course for Detector Inspector booking staff and the Jotform / Exceptions Team on handling cases that can’t be booked directly through IBA. Learn at your own pace &mdash; pick up where you left off any time.</p>' +
+    '<p>A practical training course for DI Staff, the Jotform / Exceptions Team and the Planning / Regional Team on handling cases that can’t be booked directly through IBA. Learn at your own pace &mdash; pick up where you left off any time.</p>' +
     '<button class="btn-solid" onclick="showMenu()">View lessons</button>';
   document.getElementById("cover").style.display = "flex";
   document.getElementById("menu").style.display = "none";
